@@ -23,11 +23,13 @@
       align-items: center;
       justify-content: center;
       background-color: #000;
+      overflow: hidden;
     }
 
     .cover-image {
-      width: 500px;
-      max-width: 90%;
+      width: 350px;
+      max-width: 80%;
+      height: auto;
       transition: transform 1s ease-in-out, opacity 0.8s ease;
       cursor: pointer;
       border: 6px solid #444;
@@ -36,7 +38,7 @@
     }
 
     .cover-image.open {
-      transform: rotateY(180deg) scale(1.1);
+      transform: rotateY(180deg) scale(1.05);
       opacity: 0;
     }
 
@@ -48,7 +50,7 @@
       width: 90%;
       max-width: 700px;
       color: #fff;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       z-index: 10;
       pointer-events: none;
     }
@@ -56,11 +58,11 @@
     .content {
       display: none;
       position: absolute;
-      top: 10%;
+      top: 12%;
       left: 50%;
       transform: translateX(-50%);
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       max-width: 800px;
     }
 
@@ -70,14 +72,28 @@
 
     a.button {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
+      margin: 15px 10px 0;
+      padding: 10px 20px;
       background: #005f40;
       color: white;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
       box-shadow: 0 0 10px #000;
+    }
+
+    @media (max-width: 600px) {
+      .cover-image {
+        width: 80%;
+      }
+
+      .text-overlay {
+        font-size: 1rem;
+      }
+
+      .content {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
