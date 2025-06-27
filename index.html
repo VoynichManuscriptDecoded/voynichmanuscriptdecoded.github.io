@@ -9,112 +9,104 @@
       margin: 0;
       padding: 0;
       background-color: #000;
-      font-family: Georgia, serif;
-      color: #daa520;
+      font-family: 'Georgia', serif;
+      color: #d4af37;
       text-align: center;
     }
 
-    .hidden {
-      display: none;
+    .container {
+      padding-top: 50px;
     }
 
-    .title {
-      font-size: 2.5em;
+    h1 {
+      font-size: 3em;
       font-weight: bold;
-      margin-top: 40px;
-      color: #daa520;
+      margin-bottom: 20px;
     }
 
-    .subtitle {
+    .description {
       font-size: 1.2em;
-      margin: 20px auto;
       max-width: 800px;
-      color: #daa520;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
     }
 
-    .book-container {
-      margin-top: 40px;
-      transition: transform 1s;
+    .book {
+      margin-top: 50px;
+      transition: transform 0.8s;
       cursor: pointer;
+      width: 360px;
     }
 
-    .book-container img {
-      max-width: 300px;
-      height: auto;
-    }
-
-    .inside {
-      padding-top: 40px;
-    }
-
-    h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
-      color: #daa520;
-    }
-
-    p {
-      font-size: 1.1em;
-      margin-bottom: 25px;
-      color: #daa520;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 10px;
-      background-color: #014421;
-      color: white;
-      font-weight: bold;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 1em;
-    }
-
-    .button:hover {
-      background-color: #026f3e;
-    }
-
-    .flipped {
+    .book:hover {
       transform: rotateY(180deg);
+    }
+
+    #manuscript {
+      display: none;
+      margin-top: 100px;
+    }
+
+    #manuscript.show {
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      margin-bottom: 20px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #014421;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .buttons a:hover {
+      background-color: #026b34;
     }
   </style>
 </head>
 <body>
 
-  <!-- Front Page -->
-  <div id="landing">
-    <div class="title">The Voynich Manuscript Decoded</div>
-    <div class="subtitle">
-      The full decoding and harmonic reconstruction of the Voynich manuscript by Christine Blackburn. <br>
+  <div class="container" id="home">
+    <h1>The Voynich Manuscript Decoded</h1>
+
+    <div class="description">
+      The full decoding and harmonic reconstruction of the Voynich manuscript by Christine Blackburn.<br><br>
       Open the manuscript to explore keys, decoded folios, harmonic layers, and cosmological references grounded in Ficinian Neoplatonism.
     </div>
-    <div class="book-container" id="book">
-      <img src="book-cover.png" alt="Voynich Manuscript Book Cover">
-    </div>
+
+    <img src="book-cover.png" alt="Voynich Manuscript Book Cover" class="book" onclick="openManuscript()" />
   </div>
 
-  <!-- After Book Flip -->
-  <div id="inside" class="hidden inside">
-    <h2>Welcome inside the manuscript</h2>
-    <p>Choose a section to begin:</p>
-    <div>
-      <a href="#" class="button">Botanical Section</a>
-      <a href="#" class="button">Astronomical Charts</a>
-      <a href="#" class="button">Decoded Folios</a>
-      <a href="#" class="button">Harmonic Keys</a>
+  <div id="manuscript">
+    <div class="section-title">Welcome inside the manuscript</div>
+    <div class="section-subtitle">Choose a section to begin:</div>
+    <div class="buttons">
+      <a href="#botanical">Botanical Section</a>
+      <a href="#astronomical">Astronomical Charts</a>
+      <a href="#folios">Decoded Folios</a>
+      <a href="#harmonic">Harmonic Keys</a>
     </div>
   </div>
 
   <script>
-    const book = document.getElementById('book');
-    const landing = document.getElementById('landing');
-    const inside = document.getElementById('inside');
-
-    book.addEventListener('click', () => {
-      landing.classList.add('hidden');
-      inside.classList.remove('hidden');
-    });
+    function openManuscript() {
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('manuscript').classList.add('show');
+    }
   </script>
+
 </body>
 </html>
