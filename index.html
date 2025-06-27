@@ -1,108 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Voynich Manuscript Decoded</title>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    background: #111;
-    font-family: Georgia, serif;
-    text-align: center;
-    overflow: hidden;
-  }
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      color: #d4af37; /* gold */
+    }
 
-  .cover-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #000;
-    overflow: hidden;
-    padding-top: 60px;
-  }
+    .cover-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 80px; /* move content down */
+      height: 100vh;
+      overflow: hidden;
+    }
 
-  .text-overlay {
-    color: #d4af37; /* gold */
-    max-width: 800px;
-    padding: 20px;
-  }
-
-  .text-overlay h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.6em;
-  }
-
-  .text-overlay p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0 auto;
-  }
-
-  .cover-image {
-    margin-top: 30px;
-    width: 350px;
-    max-width: 80%;
-    height: auto;
-    transition: transform 1s ease-in-out, opacity 0.8s ease;
-    cursor: pointer;
-    border: 6px solid #444;
-    box-shadow: 0 0 40px rgba(0,0,0,0.6);
-    border-radius: 8px;
-  }
-
-  .cover-image.open {
-    transform: rotateY(180deg) scale(1.05);
-    opacity: 0;
-  }
-
-  .content {
-    display: none;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 1.1rem;
-    max-width: 800px;
-  }
-
-  .content.active {
-    display: block;
-  }
-
-  a.button {
-    display: inline-block;
-    margin: 15px 10px 0;
-    padding: 10px 20px;
-    background: #005f40;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    box-shadow: 0 0 10px #000;
-  }
-
-  @media (max-width: 600px) {
-    .cover-image {
-      width: 80%;
+    .text-overlay {
+      max-width: 800px;
+      margin-bottom: 40px;
+      padding: 0 20px;
     }
 
     .text-overlay h1 {
-      font-size: 1.6rem;
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #d4af37;
     }
 
     .text-overlay p {
-      font-size: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #d4af37;
     }
-  }
-</style>
-  
+
+    .cover-image {
+      width: 320px;
+      max-width: 90%;
+      height: auto;
+      margin-top: 20px;
+      transition: transform 1s ease-in-out, opacity 0.8s ease;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(0,0,0,0.6);
+      border-radius: 8px;
+    }
+
+    .cover-image.open {
+      transform: rotateY(180deg) scale(1.05);
+      opacity: 0;
+    }
+
+    .content {
+      display: none;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 1.1rem;
+      max-width: 800px;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #005f40;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #000;
+    }
+
+    @media (max-width: 600px) {
+      .cover-image {
+        width: 80%;
+      }
+
+      .text-overlay h1 {
+        font-size: 1.8rem;
+      }
+
+      .text-overlay p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -110,32 +106,31 @@
     <div class="text-overlay">
       <h1>The Voynich Manuscript Decoded</h1>
       <p>
-        The full decoding and harmonic reconstruction of the Voynich manuscript by Christine Blackburn. 
-        Open the manuscript to explore keys, decoded folios, harmonic layers, and cosmological references grounded in Ficinian Neoplatonism.
+        The full decoding and harmonic reconstruction of the Voynich manuscript by Christine Blackburn.
+        Open the manuscript to explore keys, decoded folios, harmonic layers, and cosmological references
+        grounded in Ficinian Neoplatonism.
       </p>
     </div>
-    <img src="book-cover.png" alt="Voynich Manuscript Cover" class="cover-image" id="coverImage" />
-    
+
+    <img src="book-cover.png" alt="The Voynich Manuscript" class="cover-image" onclick="openBook()">
+
     <div class="content" id="mainContent">
-      <h2>Welcome inside the manuscript</h2>
-      <p>Choose a section to begin:</p>
-      <a href="#" class="button">Botanical Section</a>
-      <a href="#" class="button">Astronomical Charts</a>
-      <a href="#" class="button">Decoded Folios</a>
-      <a href="#" class="button">Harmonic Keys</a>
+      <h2>Welcome</h2>
+      <p>Start exploring:</p>
+      <a class="button" href="index.html">Enter the Manuscript</a>
     </div>
   </div>
 
   <script>
-    const coverImage = document.getElementById('coverImage');
-    const content = document.getElementById('mainContent');
-
-    coverImage.addEventListener('click', () => {
-      coverImage.classList.add('open');
+    function openBook() {
+      const book = document.querySelector('.cover-image');
+      const content = document.getElementById('mainContent');
+      book.classList.add('open');
       setTimeout(() => {
         content.classList.add('active');
       }, 1000);
-    });
+    }
   </script>
+
 </body>
 </html>
