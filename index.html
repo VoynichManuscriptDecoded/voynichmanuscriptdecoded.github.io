@@ -1,69 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>The Voynich Manuscript Decoded</title>
+  <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      background-color: #0c0c0c;
-      font-family: Georgia, serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
+      background-color: #0e0e0e;
       color: #d4af37;
+      font-family: 'Georgia', serif;
       text-align: center;
     }
 
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
+      font-size: 3.5rem;
+      margin-top: 60px;
+      margin-bottom: 20px;
     }
 
-    p {
-      font-size: 1.2em;
-      margin-bottom: 2em;
-      max-width: 800px;
-      padding: 0 20px;
+    .subtitle {
+      font-size: 1.3rem;
+      line-height: 1.8rem;
+      margin: 0 auto;
+      max-width: 900px;
     }
 
-    #book {
-      width: 380px;
-      max-width: 90%;
-      transition: transform 1.5s ease;
+    .subtitle br + br {
+      margin-bottom: 40px;
+    }
+
+    .book-container {
+      margin-top: 50px;
+    }
+
+    .book {
+      width: 300px;
       cursor: pointer;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+      animation: pulse 2.5s infinite;
     }
 
-    #book.opened {
-      transform: rotateY(180deg) scale(1.1);
-      transition: transform 1.5s ease;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
 <body>
 
   <h1>The Voynich Manuscript Decoded</h1>
-  <p>The full decoding of the Voynich Manuscript by Christine Blackburn.<br/>
-     Open the manuscript to explore keys, decoded folios, harmonic layers,<br/>
-     and cosmological references grounded in Ficinian Neoplatonism.</p>
 
-  <img id="book" src="book-cover.png" alt="Voynich Manuscript Book" />
+  <div class="subtitle">
+    The full decoding and harmonic reconstruction of the Voynich manuscript by Christine Blackburn.<br><br>
+    Open the manuscript to explore keys, decoded folios, harmonic layers, and cosmological references grounded in Ficinian Neoplatonism.
+  </div>
 
-  <script>
-    const book = document.getElementById('book');
-    book.addEventListener('click', () => {
-      book.classList.add('opened');
-      setTimeout(() => {
-        window.location.href = "main.html";
-      }, 1500);
-    });
-  </script>
+  <div class="book-container">
+    <a href="index.html">
+      <img src="bsdbook-cover.png" alt="The Voynich Manuscript Book Cover" class="book">
+    </a>
+  </div>
 
 </body>
 </html>
