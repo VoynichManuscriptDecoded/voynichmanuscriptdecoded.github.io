@@ -4,98 +4,104 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Voynich Manuscript Decoded</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #111;
-      color: white;
-      font-family: Georgia, serif;
-      text-align: center;
-      overflow: hidden;
-    }
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #111;
+    font-family: Georgia, serif;
+    text-align: center;
+    overflow: hidden;
+  }
 
-    .cover-container {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #000;
-      overflow: hidden;
-    }
+  .cover-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #000;
+    overflow: hidden;
+    padding-top: 60px;
+  }
 
+  .text-overlay {
+    color: #d4af37; /* gold */
+    max-width: 800px;
+    padding: 20px;
+  }
+
+  .text-overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.6em;
+  }
+
+  .text-overlay p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 auto;
+  }
+
+  .cover-image {
+    margin-top: 30px;
+    width: 350px;
+    max-width: 80%;
+    height: auto;
+    transition: transform 1s ease-in-out, opacity 0.8s ease;
+    cursor: pointer;
+    border: 6px solid #444;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    border-radius: 8px;
+  }
+
+  .cover-image.open {
+    transform: rotateY(180deg) scale(1.05);
+    opacity: 0;
+  }
+
+  .content {
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.1rem;
+    max-width: 800px;
+  }
+
+  .content.active {
+    display: block;
+  }
+
+  a.button {
+    display: inline-block;
+    margin: 15px 10px 0;
+    padding: 10px 20px;
+    background: #005f40;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    box-shadow: 0 0 10px #000;
+  }
+
+  @media (max-width: 600px) {
     .cover-image {
-      width: 350px;
-      max-width: 80%;
-      height: auto;
-      transition: transform 1s ease-in-out, opacity 0.8s ease;
-      cursor: pointer;
-      border: 6px solid #444;
-      box-shadow: 0 0 40px rgba(0,0,0,0.6);
-      border-radius: 8px;
+      width: 80%;
     }
 
-    .cover-image.open {
-      transform: rotateY(180deg) scale(1.05);
-      opacity: 0;
+    .text-overlay h1 {
+      font-size: 1.6rem;
     }
 
-    .text-overlay {
-      position: absolute;
-      top: 8%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 700px;
-      color: #fff;
-      font-size: 1.1rem;
-      z-index: 10;
-      pointer-events: none;
+    .text-overlay p {
+      font-size: 1rem;
     }
-
-    .content {
-      display: none;
-      position: absolute;
-      top: 12%;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 1.1rem;
-      max-width: 800px;
-    }
-
-    .content.active {
-      display: block;
-    }
-
-    a.button {
-      display: inline-block;
-      margin: 15px 10px 0;
-      padding: 10px 20px;
-      background: #005f40;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      box-shadow: 0 0 10px #000;
-    }
-
-    @media (max-width: 600px) {
-      .cover-image {
-        width: 80%;
-      }
-
-      .text-overlay {
-        font-size: 1rem;
-      }
-
-      .content {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
