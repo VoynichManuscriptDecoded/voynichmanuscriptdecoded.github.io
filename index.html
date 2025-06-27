@@ -7,106 +7,99 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
       background-color: #000;
       font-family: 'Georgia', serif;
-      color: #d4af37;
+      color: #000;
       text-align: center;
     }
 
     .container {
-      padding-top: 40px;
-    }
-
-    h1 {
-      font-size: 3.2em;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .description {
-      font-size: 1.2em;
-      max-width: 850px;
-      margin: 0 auto 30px auto;
-      line-height: 1.6;
+      padding-top: 60px;
     }
 
     .book {
-      margin-top: 30px;
-      width: 340px;
-      max-width: 90vw;
+      width: 360px;
       transition: transform 0.8s;
       cursor: pointer;
+      margin-top: 40px;
     }
 
     .book:hover {
       transform: rotateY(180deg);
     }
 
-    #manuscript {
+    #indexPage {
       display: none;
-      margin-top: 60px;
+      background-image: url('parchment.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      padding: 60px 40px;
+      color: #000;
     }
 
-    #manuscript.show {
-      display: block;
-    }
-
-    .section-title {
-      font-size: 2em;
+    .index-title {
+      font-size: 3em;
       font-weight: bold;
-      margin-bottom: 10px;
+      margin-bottom: 40px;
     }
 
-    .section-subtitle {
-      margin-bottom: 20px;
+    .index-entry {
+      font-size: 1.4em;
+      margin: 12px auto;
+      width: 70%;
+      text-align: left;
+      border-bottom: 1px dotted #333;
+      display: flex;
+      justify-content: space-between;
     }
 
-    .buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: #014421;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
+    .label {
+      flex: 1;
     }
 
-    .buttons a:hover {
-      background-color: #026b34;
+    .folio {
+      width: 140px;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .index-entry {
+        font-size: 1.2em;
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container" id="home">
-    <h1>The Voynich Manuscript Decoded</h1>
-
-    <div class="description">
+  <div id="home" class="container">
+    <h1 style="color:#d4af37;">The Voynich Manuscript Decoded</h1>
+    <p style="color:#d4af37; max-width: 800px; margin: auto;">
       The full decoding and harmonic reconstruction of the Voynich manuscript by Christine Blackburn.
       <br><br>
       Open the manuscript to explore keys, decoded folios, harmonic layers, and cosmological references grounded in Ficinian Neoplatonism.
-    </div>
-
-    <img src="book-cover.png" alt="Voynich Manuscript Book Cover" class="book" onclick="openManuscript()" />
+    </p>
+    <img src="book-cover.png" alt="Voynich Book Cover" class="book" onclick="openIndex()" />
   </div>
 
-  <div id="manuscript">
-    <div class="section-title">Welcome inside the manuscript</div>
-    <div class="section-subtitle">Choose a section to begin:</div>
-    <div class="buttons">
-      <a href="#botanical">Botanical Section</a>
-      <a href="#astronomical">Astronomical Charts</a>
-      <a href="#folios">Decoded Folios</a>
-      <a href="#harmonic">Harmonic Keys</a>
-    </div>
+  <div id="indexPage">
+    <div class="index-title">Index</div>
+
+    <div class="index-entry"><div class="label">About the Book</div><div class="folio"></div></div>
+    <div class="index-entry"><div class="label">About the Author</div><div class="folio"></div></div>
+    <div class="index-entry"><div class="label">The Key</div><div class="folio"></div></div>
+    <div class="index-entry"><div class="label">Botanical Section</div><div class="folio">f1r–f24v</div></div>
+    <div class="index-entry"><div class="label">Astronomical Charts</div><div class="folio">f25r–f38v</div></div>
+    <div class="index-entry"><div class="label">Cosmological Layers</div><div class="folio">f39r–f57v</div></div>
+    <div class="index-entry"><div class="label">Decoded Folios</div><div class="folio">Selected</div></div>
+    <div class="index-entry"><div class="label">Harmonic Keys</div><div class="folio">Ongoing</div></div>
   </div>
 
   <script>
-    function openManuscript() {
-      document.getElementById('home').style.display = 'none';
-      document.getElementById('manuscript').classList.add('show');
+    function openIndex() {
+      document.getElementById("home").style.display = "none";
+      document.getElementById("indexPage").style.display = "block";
     }
   </script>
 
