@@ -1,73 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Voynich Manuscript Decoded</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: #0e0e0e;
-      font-family: 'Georgia', serif;
-      color: #f3f0e6;
+      background: #111;
+      color: white;
+      font-family: Georgia, serif;
+      text-align: center;
       overflow: hidden;
     }
 
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .cover-container {
+      position: relative;
+      width: 100vw;
       height: 100vh;
-      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
     }
 
-    .book {
-      width: 600px;
-      height: auto;
-      transition: transform 1.5s ease;
+    .cover-image {
+      width: 500px;
+      max-width: 90%;
+      transition: transform 1s ease-in-out, opacity 0.8s ease;
       cursor: pointer;
+      border: 6px solid #444;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+      border-radius: 8px;
     }
 
-    .book.opened {
-      transform: scale(0.95) rotateY(180deg);
+    .cover-image.open {
+      transform: rotateY(180deg) scale(1.1);
+      opacity: 0;
     }
 
-    .title-block {
+    .text-overlay {
+      position: absolute;
+      top: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 700px;
+      color: #fff;
+      font-size: 1.2rem;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .content {
+      display: none;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 1.2rem;
       max-width: 800px;
-      text-align: center;
-      margin-bottom: 40px;
     }
 
-    .title-block h1 {
-      font-size: 2.8em;
-      margin-bottom: 10px;
-      color: #e7dca7;
+    .content.active {
+      display: block;
     }
 
-    .title-block p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      color: #d6d2c4;
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #005f40;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #000;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="title-block">
+
+  <div class="cover-container">
+    <div class="text-overlay">
       <h1>The Voynich Manuscript Decoded</h1>
-      <p>The full decoding of the Voynich manuscript by Christine Blackburn. Open the manuscript to explore keys, decoded folios, harmonic layers, and cosmological references grounded in Ficinian Neoplatonism.</p>
+      <p>
+        The full decoding and harmonic reconstruction of the Voynich manuscript by Christine Blackburn. 
+        Open the manuscript to explore keys, decoded folios, harmonic layers, and cosmological references grounded in Ficinian Neoplatonism.
+      </p>
     </div>
-    <img src="book-cover.png" alt="Voynich Manuscript Cover" class="book" id="bookCover">
+    <img src="book-cover.png" alt="Voynich Manuscript Cover" class="cover-image" id="coverImage" />
+    
+    <div class="content" id="mainContent">
+      <h2>Welcome inside the manuscript</h2>
+      <p>Choose a section to begin:</p>
+      <a href="#" class="button">Botanical Section</a>
+      <a href="#" class="button">Astronomical Charts</a>
+      <a href="#" class="button">Decoded Folios</a>
+      <a href="#" class="button">Harmonic Keys</a>
+    </div>
   </div>
 
   <script>
-    const book = document.getElementById('bookCover');
-    book.addEventListener('click', () => {
-      book.classList.add('opened');
+    const coverImage = document.getElementById('coverImage');
+    const content = document.getElementById('mainContent');
+
+    coverImage.addEventListener('click', () => {
+      coverImage.classList.add('open');
       setTimeout(() => {
-        window.location.href = 'index.html'; // Where your main site index will go
-      }, 1600);
+        content.classList.add('active');
+      }, 1000);
     });
   </script>
 </body>
