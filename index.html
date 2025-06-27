@@ -8,7 +8,7 @@
     body {
       margin: 0;
       background-color: #000;
-      font-family: 'Georgia', serif;
+      font-family: Georgia, serif;
       color: #000;
       text-align: center;
     }
@@ -19,89 +19,29 @@
 
     .book {
       width: 360px;
-      transition: transform 0.8s;
+      transition: transform 0.6s;
       cursor: pointer;
       margin-top: 40px;
     }
 
     .book:hover {
-      transform: rotateY(180deg);
-    }
-
-    #indexPage {
-      display: none;
-      background-image: url('parchment.jpg');
-      background-size: cover;
-      background-position: center;
-      min-height: 100vh;
-      padding: 60px 40px;
-      color: #000;
-    }
-
-    .index-title {
-      font-size: 3em;
-      font-weight: bold;
-      margin-bottom: 40px;
-    }
-
-    .index-entry {
-      font-size: 1.4em;
-      margin: 12px auto;
-      width: 70%;
-      text-align: left;
-      border-bottom: 1px dotted #333;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .label {
-      flex: 1;
-    }
-
-    .folio {
-      width: 140px;
-      text-align: right;
-    }
-
-    @media (max-width: 768px) {
-      .index-entry {
-        font-size: 1.2em;
-        width: 90%;
-      }
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
 
-  <div id="home" class="container">
+  <div class="container">
     <h1 style="color:#d4af37;">The Voynich Manuscript Decoded</h1>
     <p style="color:#d4af37; max-width: 800px; margin: auto;">
       The full decoding and harmonic reconstruction of the Voynich manuscript by Christine Blackburn.
       <br><br>
       Open the manuscript to explore keys, decoded folios, harmonic layers, and cosmological references grounded in Ficinian Neoplatonism.
     </p>
-    <img src="book-cover.png" alt="Voynich Book Cover" class="book" onclick="openIndex()" />
+    <a href="main.html">
+      <img src="book-cover.png" alt="Voynich Book Cover" class="book" />
+    </a>
   </div>
-
-  <div id="indexPage">
-    <div class="index-title">Index</div>
-
-    <div class="index-entry"><div class="label">About the Book</div><div class="folio"></div></div>
-    <div class="index-entry"><div class="label">About the Author</div><div class="folio"></div></div>
-    <div class="index-entry"><div class="label">The Key</div><div class="folio"></div></div>
-    <div class="index-entry"><div class="label">Botanical Section</div><div class="folio">f1r–f24v</div></div>
-    <div class="index-entry"><div class="label">Astronomical Charts</div><div class="folio">f25r–f38v</div></div>
-    <div class="index-entry"><div class="label">Cosmological Layers</div><div class="folio">f39r–f57v</div></div>
-    <div class="index-entry"><div class="label">Decoded Folios</div><div class="folio">Selected</div></div>
-    <div class="index-entry"><div class="label">Harmonic Keys</div><div class="folio">Ongoing</div></div>
-  </div>
-
-  <script>
-    function openIndex() {
-      document.getElementById("home").style.display = "none";
-      document.getElementById("indexPage").style.display = "block";
-    }
-  </script>
 
 </body>
 </html>
