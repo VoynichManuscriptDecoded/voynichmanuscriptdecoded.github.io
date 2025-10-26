@@ -17,26 +17,40 @@
     main {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 60px 60px 40px 60px;
+      padding: 40px 60px 40px 60px;
     }
 
     h1 {
       font-size: 60px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      margin-top: 30px;
     }
 
     h2 {
       font-size: 32px;
-      margin-top: 50px;
+      margin-top: 20px;
       margin-bottom: 25px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
+    .section-headings {
+      display: grid;
+      grid-template-columns: 0.5fr 2fr 1fr;
+      max-width: 1000px;
+      margin: 0 auto 10px auto;
+      border-bottom: 1px solid #999;
+      padding-bottom: 8px;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #666;
+      letter-spacing: 1px;
+    }
+
     .section-list {
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .section-row {
@@ -66,14 +80,14 @@
     p.note {
       font-size: 18px;
       color: #555;
-      margin-top: 80px;
+      margin-top: 60px;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
     }
 
     footer {
-      margin-top: 100px;
+      margin-top: 80px;
       font-size: 16px;
       color: #555;
     }
@@ -88,11 +102,18 @@
 
     <h2>Sections</h2>
 
+    <div class="section-headings">
+      <div>No.</div>
+      <div>Section</div>
+      <div>Folios</div>
+    </div>
+
     <div class="section-list">
+
       <div class="section-row">
         <div>I</div>
         <div><a href="section1/index.html">Ailments, Medicines, Recipe & Treatments</a></div>
-        <div>(F1r–F57v)</div>
+        <div>F1r–F57v</div>
       </div>
 
       <div class="section-row">
@@ -106,6 +127,7 @@
         <div>Coming Soon</div>
         <div>–</div>
       </div>
+
     </div>
 
     <p class="note">
