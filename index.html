@@ -2,69 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The Voynich Manuscript Decoded</title>
-  <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Voynich Manuscript - Decoded</title>
   <style>
     body {
       margin: 0;
-      background-color: #0e0e0e;
-      color: #d4af37;
-      font-family: 'Georgia', serif;
+      font-family: Georgia, serif;
+      color: black;
+      background-color: white;
+    }
+
+    /* Top white navigation bar */
+    header {
+      background-color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    header a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      margin-right: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    /* Middle black section */
+    section.hero {
+      background-color: black;
+      color: white;
       text-align: center;
+      padding: 160px 20px;
     }
 
-    h1 {
-      font-size: 3.5rem;
-      margin-top: 60px;
-      margin-bottom: 20px;
+    section.hero h1 {
+      font-size: 64px;
+      margin: 0;
+      letter-spacing: 2px;
     }
 
-    .subtitle {
-      font-size: 1.1rem;
-      line-height: 1.8rem;
-      margin: 0 auto;
-      max-width: 900px;
+    section.hero h2 {
+      font-size: 40px;
+      margin-top: 20px;
+      font-weight: normal;
     }
 
-    .subtitle br + br {
-      margin-bottom: 40px;
-    }
-
-    .book-container {
-      margin-top: 50px;
-    }
-    
-    .book {
-      width: 400px;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-      animation: pulse 2.5s infinite;
-      position: relative;
-      top: -40px;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.03); }
-      100% { transform: scale(1); }
+    /* Bottom white section */
+    section.bottom {
+      background-color: white;
+      padding: 200px 20px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <h1>The Voynich Manuscript Decoded</h1>
+  <header>
+    <a href="folios/index.html">Folios</a>
+  </header>
 
-  <div class="subtitle">
-    The decoding and reconstruction of the Voynich manuscript by Christine Blackburn.<br><br>
-    Open the manuscript to explore keys, decoded folios, harmonic layers, and cosmological references grounded in Neoplatonism.
-  </div>
+  <section class="hero">
+    <h1>The Voynich Manuscript</h1>
+    <h2>Decoded</h2>
+  </section>
 
-  <div class="book-container">
-    <a href="index.html">
-      <a href="main.html">
-  <img src="book-cover1.png" alt="The Voynich Manuscript Book Cover" class="book">
-</a>
-  </div>
+  <section class="bottom">
+    <!-- empty for now -->
+  </section>
 
 </body>
 </html>
