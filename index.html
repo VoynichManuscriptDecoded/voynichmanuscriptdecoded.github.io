@@ -3,82 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Links - The Voynich Manuscript Decoded</title>
+  <title>The Voynich Manuscript - Decoded</title>
   <style>
     body {
       margin: 0;
       font-family: Georgia, serif;
-      background-color: white;
       color: black;
-      text-align: center;
+      background-color: white;
     }
 
-    h1 {
-      font-size: 60px;
-      margin-top: 40px;
-      margin-bottom: 20px;
+    /* Top white navigation bar */
+    header {
+      background-color: white;
+      height: 25vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    header a {
+      text-decoration: none;
+      color: black;
+      font-size: 42px;
       text-transform: uppercase;
       letter-spacing: 2px;
     }
 
-    p.note {
-      font-style: italic;
-      margin: 0;
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 40px;
-    }
-
-    a {
-      display: block;
-      font-size: 22px;
-      color: black;
-      text-decoration: none;
-      margin-top: 30px;
-      margin-bottom: 5px;
-    }
-
-    a:hover {
+    header a:hover {
       text-decoration: underline;
     }
 
-    p.subtext {
-      font-size: 16px;
-      color: #555;
-      margin-top: 0;
-      margin-bottom: 10px;
+    /* Black middle band */
+    section.hero {
+      background-color: black;
+      color: white;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
-    footer {
-      margin-top: 80px;
-      font-size: 16px;
-      color: #555;
+    section.hero h1 {
+      font-size: 80px;
+      margin: 0;
+      letter-spacing: 3px;
+    }
+
+    section.hero h2 {
+      font-size: 50px;
+      margin-top: 20px;
+      font-weight: normal;
+    }
+
+    /* Bottom white section for links */
+    section.bottom {
+      background-color: white;
+      height: 25vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section.bottom a {
+      text-decoration: none;
+      color: black;
+      font-size: 21px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    section.bottom a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <h1>Links</h1>
-  <p class="note">Published by <strong>Christine Blackburn / Preedy (Mrs)</strong></p>
+  <header>
+    <a href="folios/index.html">Folios</a>
+  </header>
 
-  <a href="mailto:chris1212preedy@gmail.com">Email</a>
-  <p class="subtext">chris1212preedy@gmail.com</p>
+  <section class="hero">
+    <h1>The Voynich Manuscript</h1>
+    <h2>Decoded</h2>
+  </section>
 
-  <a href="https://independent.academia.edu/ChristineBlackburn12" target="_blank">Academia.edu</a>
-  <p class="subtext">Full evolution of the Voynich decode documented since April 2025.</p>
-
-  <a href="https://drive.google.com/drive/folders/1bWA36RbvCJS-FSM6lNv8d_a04r6Kc0rD?usp=drive_link" target="_blank">Google Drive</a>
-  <p class="subtext">Full decoded folios, raw glyph data, and detailed summaries.</p>
-
-  <a href="https://www.youtube.com/@Voynich-Decoded" target="_blank">YouTube</a>
-  <p class="subtext">Video breakdowns and project updates.</p>
-
-  <a href="https://www.tiktok.com/@voynichdecoded" target="_blank">TikTok</a>
-  <p class="subtext">Short-form clips and decoding insights.</p>
-
-  <footer>
-    © Christine Blackburn – The Voynich Manuscript Decoded
-  </footer>
+  <section class="bottom">
+    <a href="links/index.html">Links</a>
+  </section>
 
 </body>
 </html>
