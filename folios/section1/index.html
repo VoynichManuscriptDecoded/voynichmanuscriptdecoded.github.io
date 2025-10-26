@@ -14,26 +14,34 @@
     }
 
     main {
-      max-width: 1000px;
-      margin: 10px auto 120px auto;   /* lifted higher */
-      padding: 0 180px;               /* wider side margins */
+      max-width: 1200px;
+      margin: 0 auto 120px auto;      /* pulled right up */
+      padding: 0 220px;               /* wide open margins */
     }
 
     h1 {
       font-size: 52px;
       text-align: center;
-      margin-top: 0;
-      margin-bottom: 5px;
+      margin-top: 10px;
+      margin-bottom: 0;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+    }
+
+    .dots {
+      text-align: center;
+      letter-spacing: 8px;
+      font-size: 20px;
+      margin-top: -5px;
+      color: #999;
     }
 
     h2 {
       font-size: 28px;
       text-align: center;
       font-weight: normal;
-      margin-top: 0;
-      margin-bottom: 55px;
+      margin-top: 15px;               /* lifted closer to Section I */
+      margin-bottom: 45px;
       letter-spacing: 1px;
       color: #333;
     }
@@ -49,7 +57,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr 2fr 1fr;
       gap: 10px;
-      margin-top: 55px;               /* moved up slightly */
+      margin-top: 55px;
       font-size: 14px;
       text-transform: uppercase;
       color: #666;
@@ -61,7 +69,8 @@
 <body>
 
   <main>
-    <h1>Section I</h1>
+    <h1>Section I:</h1>
+    <div class="dots">• • •</div>
     <h2>Ailments, Medicines, Recipe & Treatments</h2>
 
     <p>The following folios form the first section of the Voynich Manuscript.
