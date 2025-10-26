@@ -58,14 +58,31 @@
       color: #222;
     }
 
+    .filters {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .filters select {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      margin: 0 10px;
+      padding: 6px 10px;
+      border: 1px solid #999;
+      border-radius: 4px;
+      background: #f9f9f9;
+    }
+
     .folio-headings {
       display: grid;
       grid-template-columns: 0.8fr 1fr 3fr 0.5fr;
       gap: 12px;
       margin-top: 40px;
-      font-size: 14px;
+      font-size: 16px;
+      font-weight: bold;
       text-transform: uppercase;
-      color: #666;
+      color: #222;
       border-bottom: 1px solid #ccc;
       padding-bottom: 8px;
     }
@@ -86,6 +103,7 @@
     .folio-row a {
       color: black;
       text-decoration: none;
+      font-weight: 500;
     }
 
     .folio-row a:hover {
@@ -107,6 +125,26 @@
 
     <p>The original practitioner probably did not flip the anatomical images, but to follow modern human anatomical diagrams, the figures here have been flipped to match contemporary orientation.</p>
 
+    <!-- Dropdown filters -->
+    <div class="filters">
+      <label>Type:</label>
+      <select id="filter-type">
+        <option value="all">All</option>
+        <option value="Recipe">Recipe</option>
+        <option value="Medicine">Medicine</option>
+        <option value="Ailment/Treatment">Ailment/Treatment</option>
+      </select>
+
+      <label>Vessel:</label>
+      <select id="filter-vessel">
+        <option value="all">All</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Flora">Flora</option>
+        <option value="Containers">Containers</option>
+      </select>
+    </div>
+
     <div class="folio-headings">
       <div>Type</div>
       <div>Vessel</div>
@@ -114,7 +152,7 @@
       <div>Folio</div>
     </div>
 
-    <div class="folio-rows">
+    <div class="folio-rows" id="folio-rows">
 
       <div class="folio-row">
         <div>Recipe</div>
@@ -203,6 +241,29 @@
     </div>
 
   </main>
+
+  <script>
+    // Filter function
+    const typeSelect = document.getElementById('filter-type');
+    const vesselSelect = document.getElementById('filter-vessel');
+    const rows = document.querySelectorAll('.folio-row');
+
+    function filterRows() {
+      const type = typeSelect.value;
+      const vessel = vesselSelect.value;
+
+      rows.forEach(row => {
+        const rowType = row.children[0].innerText.trim();
+        const rowVessel = row.children[1].innerText.trim();
+        const matchesType = (type === 'all' || rowType === type);
+        const matchesVessel = (vessel === 'all' || rowVessel === vessel);
+        row.style.display = (matchesType && matchesVessel) ? 'grid' : 'none';
+      });
+    }
+
+    typeSelect.addEventListener('change', filterRows);
+    vesselSelect.addEventListener('change', filterRows);
+  </script>
 
 </body>
 </html>
