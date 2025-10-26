@@ -12,51 +12,49 @@
       background-color: white;
     }
 
-    /* Top white navigation bar */
-    header {
+    /* Equal white top and bottom bands */
+    header, section.bottom {
       background-color: white;
-      padding: 60px 20px;
-      text-align: center;
+      height: 33.3vh;              /* each white band = one-third of screen height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-bottom: 1px solid #ccc;
     }
 
     header a {
       text-decoration: none;
       color: black;
-      font-size: 24px;
+      font-size: 36px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
 
     header a:hover {
       text-decoration: underline;
     }
 
-    /* Middle black section - narrower band */
+    /* Black middle band */
     section.hero {
       background-color: black;
       color: white;
-      text-align: center;
-      padding: 100px 20px;
+      height: 33.3vh;              /* same height as white bands */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     section.hero h1 {
-      font-size: 56px;
+      font-size: 80px;
       margin: 0;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
     }
 
     section.hero h2 {
-      font-size: 32px;
-      margin-top: 15px;
+      font-size: 50px;
+      margin-top: 20px;
       font-weight: normal;
-    }
-
-    /* Bottom white section */
-    section.bottom {
-      background-color: white;
-      padding: 120px 20px;
-      text-align: center;
     }
   </style>
 </head>
