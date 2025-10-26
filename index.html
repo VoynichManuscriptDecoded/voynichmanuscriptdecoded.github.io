@@ -12,10 +12,10 @@
       background-color: white;
     }
 
-    /* Top and bottom white bands */
-    header, section.bottom {
+    /* Top white navigation bar */
+    header {
       background-color: white;
-      height: 25vh; /* smaller white bands */
+      height: 25vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -25,7 +25,7 @@
     header a {
       text-decoration: none;
       color: black;
-      font-size: 36px;
+      font-size: 42px;
       text-transform: uppercase;
       letter-spacing: 2px;
     }
@@ -34,11 +34,11 @@
       text-decoration: underline;
     }
 
-    /* Enlarged black middle band */
+    /* Black middle band */
     section.hero {
       background-color: black;
       color: white;
-      height: 50vh; /* bigger black section */
+      height: 50vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -56,6 +56,27 @@
       margin-top: 20px;
       font-weight: normal;
     }
+
+    /* Bottom white section for links */
+    section.bottom {
+      background-color: white;
+      height: 25vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section.bottom a {
+      text-decoration: none;
+      color: black;
+      font-size: 42px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    section.bottom a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -70,7 +91,7 @@
   </section>
 
   <section class="bottom">
-    <!-- empty for now -->
+    <a href="links/index.html">Links</a>
   </section>
 
 </body>
