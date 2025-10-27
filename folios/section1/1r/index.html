@@ -155,32 +155,22 @@
       margin: 0 auto;
     }
 
-    /* --- Main Key --- */
-    .main-key {
-      margin: 100px auto 80px auto;
-      max-width: 1000px;
-      text-align: center;
+    /* --- Bottom Images (side-by-side) --- */
+    .bottom-images {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 80px auto 40px auto;
+      max-width: 1200px;
     }
 
-    .main-key h3 {
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-
-    .main-key .scroll-box {
-      height: 600px;
-      overflow: auto;
-      border: 1px solid #ccc;
-    }
-
-    .final-image {
-      margin: 50px auto 30px auto;
-    }
-
-    .final-image img {
-      width: 90%;
-      max-width: 900px;
+    .bottom-images img {
+      width: 48%;
+      max-width: 550px;
       height: auto;
+      border: 1px solid #ddd;
     }
 
     footer {
@@ -216,6 +206,11 @@
 
       .simple-key iframe {
         height: 400px;
+      }
+
+      .bottom-images img {
+        width: 90%;
+        max-width: none;
       }
     }
 
@@ -271,17 +266,12 @@
     </div>
   </div>
 
-  <div class="main-key">
-    <h3>Key (Scrollable)</h3>
-    <div class="scroll-box">
-      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPqvGKr5N0flRCPpKzyRwJCw1DRAYnULOiH3hhQFBrZQU1awAqjXxM1vv6HeUxLC0eu08JzuRfWFiI/pubhtml?gid=477789757&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-    </div>
+  <div class="bottom-images">
+    <img src="1r bottom.jpeg" alt="Original manuscript of Folio 1r">
+    <img src="1r glyphs.jpeg" alt="Folio 1r glyph overlay on parchment">
   </div>
 
-  <div class="final-image">
-    <img src="1r bottom.jpeg" alt="Original manuscript of Folio 1r">
-    <div class="media-caption">MS 408 – Beinecke Library, Yale University</div>
-  </div>
+  <div class="media-caption">MS 408 – Beinecke Library, Yale University</div>
 
   <footer>© Christine Blackburn – The Voynich Manuscript Decoded</footer>
 </body>
