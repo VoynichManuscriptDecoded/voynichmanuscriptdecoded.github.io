@@ -108,20 +108,21 @@
     }
 
     /* --- Simple Key + Day Counts --- */
-    .daycount-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 60px;
-      flex-wrap: wrap;
-      margin: 60px auto 80px auto;
-      max-width: 1400px;
-    }
+   .daycount-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;              /* reduced from 60px */
+  flex-wrap: wrap;
+  margin: 60px auto 80px auto;
+  max-width: 1400px;
+}
 
-    .simple-key {
-      flex: 0 0 250px;
-      text-align: center;
-    }
+.simple-key {
+  flex: 0 0 320px;        /* wider: was 250px */
+  text-align: center;
+  margin-left: 30px;      /* gentle nudge to the right */
+}
 
     .simple-key h4 {
       font-size: 18px;
