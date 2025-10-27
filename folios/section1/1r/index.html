@@ -112,14 +112,14 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      gap: 25px;
+      gap: 60px;
       flex-wrap: wrap;
-      margin: 40px auto 60px auto;
-      max-width: 1200px;
+      margin: 60px auto 80px auto;
+      max-width: 1400px;
     }
 
     .simple-key {
-      flex: 0 0 220px;
+      flex: 0 0 250px;
       text-align: center;
     }
 
@@ -133,13 +133,13 @@
       width: 100%;
       height: 600px;
       border: 1px solid #ccc;
-      overflow-y: scroll;   /* only vertical */
+      overflow-y: auto;
       overflow-x: hidden;
+      display: block;
     }
 
     .sheet-block {
-      flex: 1 1 auto;
-      max-width: 900px;
+      flex: 1 1 900px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -150,15 +150,27 @@
       width: 100%;
       max-width: 900px;
       height: 600px;
-      overflow: auto; /* both directions */
+      overflow: auto;
       border: 1px solid #ccc;
-      margin: 0 auto 60px auto;
+      margin: 0 auto;
     }
 
-    .scroll-box iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+    /* --- Main Key --- */
+    .main-key {
+      margin: 100px auto 80px auto;
+      max-width: 1000px;
+      text-align: center;
+    }
+
+    .main-key h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .main-key .scroll-box {
+      height: 600px;
+      overflow: auto;
+      border: 1px solid #ccc;
     }
 
     .final-image {
@@ -181,6 +193,7 @@
       .daycount-wrap {
         flex-direction: column;
         align-items: center;
+        gap: 30px;
       }
 
       .simple-key,
@@ -246,7 +259,7 @@
     </div>
   </div>
 
-  <div class="sheet-block">
+  <div class="main-key">
     <h3>Key (Scrollable)</h3>
     <div class="scroll-box">
       <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPqvGKr5N0flRCPpKzyRwJCw1DRAYnULOiH3hhQFBrZQU1awAqjXxM1vv6HeUxLC0eu08JzuRfWFiI/pubhtml?gid=477789757&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
