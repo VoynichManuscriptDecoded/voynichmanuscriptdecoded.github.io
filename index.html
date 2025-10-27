@@ -25,7 +25,7 @@
       background-color: white;
     }
 
-    /* Top white navigation bar */
+    /* --- Top white navigation bar --- */
     header {
       background-color: white;
       height: 25vh;
@@ -33,6 +33,8 @@
       justify-content: center;
       align-items: center;
       border-bottom: 1px solid #ccc;
+      gap: 60px; /* space between links */
+      flex-wrap: wrap;
     }
 
     header a {
@@ -47,7 +49,7 @@
       text-decoration: underline;
     }
 
-    /* Black middle band */
+    /* --- Black middle band --- */
     section.hero {
       background-color: black;
       color: white;
@@ -56,6 +58,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
+      padding: 0 20px;
     }
 
     section.hero h1 {
@@ -70,7 +74,7 @@
       font-weight: normal;
     }
 
-    /* Bottom white section for links */
+    /* --- Bottom white section for links --- */
     section.bottom {
       background-color: white;
       height: 25vh;
@@ -90,19 +94,70 @@
     section.bottom a:hover {
       text-decoration: underline;
     }
+
+    /* --- Responsive adjustments for tablets/phones --- */
+    @media (max-width: 900px) {
+      header {
+        height: auto;
+        flex-direction: column;
+        gap: 25px;
+        padding: 25px 0;
+      }
+
+      header a {
+        font-size: 32px;
+      }
+
+      section.hero {
+        height: 45vh;
+      }
+
+      section.hero h1 {
+        font-size: 54px;
+      }
+
+      section.hero h2 {
+        font-size: 34px;
+      }
+
+      section.bottom {
+        height: auto;
+        padding: 40px 0;
+      }
+
+      section.bottom a {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      section.hero h1 {
+        font-size: 42px;
+      }
+      section.hero h2 {
+        font-size: 28px;
+      }
+      header a {
+        font-size: 28px;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- --- Navigation bar --- -->
   <header>
     <a href="folios/index.html">Folios</a>
+    <a href="updates/index.html" style="font-size:36px;">Updates</a>
   </header>
 
+  <!-- --- Central black band --- -->
   <section class="hero">
     <h1>The Voynich Manuscript</h1>
     <h2>Decoded</h2>
   </section>
 
+  <!-- --- Bottom link --- -->
   <section class="bottom">
     <a href="links/index.html">Links</a>
   </section>
