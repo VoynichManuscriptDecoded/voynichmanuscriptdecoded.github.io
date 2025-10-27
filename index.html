@@ -25,24 +25,31 @@
       background-color: white;
     }
 
-    /* --- Top white navigation bar --- */
+    /* --- Top navigation bar --- */
     header {
       background-color: white;
       height: 25vh;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #ccc;
-      gap: 60px; /* space between links */
-      flex-wrap: wrap;
+      padding: 0 60px;
+      box-sizing: border-box;
     }
 
     header a {
       text-decoration: none;
       color: black;
-      font-size: 42px;
       text-transform: uppercase;
       letter-spacing: 2px;
+    }
+
+    header a.main-link {
+      font-size: 42px; /* Folios */
+    }
+
+    header a.side-link {
+      font-size: 21px; /* Updates */
     }
 
     header a:hover {
@@ -95,21 +102,21 @@
       text-decoration: underline;
     }
 
-    /* --- Responsive adjustments for tablets/phones --- */
+    /* --- Responsive adjustments --- */
     @media (max-width: 900px) {
       header {
-        height: auto;
         flex-direction: column;
-        gap: 25px;
+        height: auto;
         padding: 25px 0;
+        gap: 20px;
       }
 
-      header a {
+      header a.main-link {
         font-size: 32px;
       }
 
-      section.hero {
-        height: 45vh;
+      header a.side-link {
+        font-size: 18px;
       }
 
       section.hero h1 {
@@ -137,7 +144,7 @@
       section.hero h2 {
         font-size: 28px;
       }
-      header a {
+      header a.main-link {
         font-size: 28px;
       }
     }
@@ -145,10 +152,11 @@
 </head>
 <body>
 
-  <!-- --- Navigation bar --- -->
+  <!-- --- Navigation --- -->
   <header>
-    <a href="folios/index.html">Folios</a>
-    <a href="updates/index.html" style="font-size:36px;">Updates</a>
+    <div></div> <!-- empty left space -->
+    <a href="folios/index.html" class="main-link">Folios</a>
+    <a href="updates/index.html" class="side-link">Updates</a>
   </header>
 
   <!-- --- Central black band --- -->
@@ -157,7 +165,7 @@
     <h2>Decoded</h2>
   </section>
 
-  <!-- --- Bottom link --- -->
+  <!-- --- Bottom white link --- -->
   <section class="bottom">
     <a href="links/index.html">Links</a>
   </section>
