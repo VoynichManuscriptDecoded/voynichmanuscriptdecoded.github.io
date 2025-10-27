@@ -25,38 +25,52 @@
       background-color: white;
     }
 
-    /* --- Top navigation bar --- */
+    /* --- Header Navigation --- */
     header {
       background-color: white;
       height: 25vh;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       border-bottom: 1px solid #ccc;
       padding: 0 60px;
       box-sizing: border-box;
     }
+
+    .nav-left,
+    .nav-center,
+    .nav-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-left { justify-content: flex-start; }
+    .nav-right { justify-content: flex-end; }
 
     header a {
       text-decoration: none;
       color: black;
       text-transform: uppercase;
       letter-spacing: 2px;
-    }
-
-    header a.main-link {
-      font-size: 42px; /* Folios */
-    }
-
-    header a.side-link {
-      font-size: 21px; /* Updates */
+      transition: opacity 0.2s;
     }
 
     header a:hover {
       text-decoration: underline;
+      opacity: 0.8;
     }
 
-    /* --- Black middle band --- */
+    .nav-center a {
+      font-size: 42px; /* Folios */
+    }
+
+    .nav-right a {
+      font-size: 21px; /* Updates */
+    }
+
+    /* --- Hero Section --- */
     section.hero {
       background-color: black;
       color: white;
@@ -81,7 +95,7 @@
       font-weight: normal;
     }
 
-    /* --- Bottom white section for links --- */
+    /* --- Bottom Section --- */
     section.bottom {
       background-color: white;
       height: 25vh;
@@ -102,7 +116,7 @@
       text-decoration: underline;
     }
 
-    /* --- Responsive adjustments --- */
+    /* --- Responsive Adjustments --- */
     @media (max-width: 900px) {
       header {
         flex-direction: column;
@@ -111,11 +125,11 @@
         gap: 20px;
       }
 
-      header a.main-link {
+      .nav-center a {
         font-size: 32px;
       }
 
-      header a.side-link {
+      .nav-right a {
         font-size: 18px;
       }
 
@@ -141,10 +155,12 @@
       section.hero h1 {
         font-size: 42px;
       }
+
       section.hero h2 {
         font-size: 28px;
       }
-      header a.main-link {
+
+      .nav-center a {
         font-size: 28px;
       }
     }
@@ -152,20 +168,24 @@
 </head>
 <body>
 
-  <!-- --- Navigation --- -->
+  <!-- Header Navigation -->
   <header>
-    <div></div> <!-- empty left space -->
-    <a href="folios/index.html" class="main-link">Folios</a>
-    <a href="updates/index.html" class="side-link">Updates</a>
+    <div class="nav-left"></div>
+    <div class="nav-center">
+      <a href="folios/index.html">Folios</a>
+    </div>
+    <div class="nav-right">
+      <a href="updates/index.html">Updates</a>
+    </div>
   </header>
 
-  <!-- --- Central black band --- -->
+  <!-- Hero Section -->
   <section class="hero">
     <h1>The Voynich Manuscript</h1>
     <h2>Decoded</h2>
   </section>
 
-  <!-- --- Bottom white link --- -->
+  <!-- Bottom Link -->
   <section class="bottom">
     <a href="links/index.html">Links</a>
   </section>
