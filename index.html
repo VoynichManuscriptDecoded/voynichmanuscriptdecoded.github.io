@@ -190,10 +190,21 @@
     <h2>Decoded</h2>
   </section>
 
-  <!-- Bottom Link -->
-<section class="bottom" style="display:flex; align-items:center; justify-content:center; position:relative;">
-  <a href="medici/index.html" style="position:absolute; left:60px;">De Medici</a>
-  <a href="links/index.html">Links</a>
+<section class="bottom" style="display:flex; align-items:center; justify-content:center; position:relative; flex-wrap:wrap;">
+  <a href="medici/index.html" class="medici-link" style="position:absolute; left:60px;">De Medici</a>
+  <a href="links/index.html" class="links-link">Links</a>
+
+  <style>
+    @media (max-width: 600px) {
+      .medici-link {
+        position: static !important;
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 12px;
+      }
+    }
+  </style>
 </section>
 
 </body>
