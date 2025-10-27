@@ -189,6 +189,18 @@
       color: #555;
     }
 
+    /* ---- Google Sheet iframe fixes ---- */
+    iframe[src*="docs.google.com/spreadsheets"] {
+      width: 100% !important;
+      height: 600px !important;
+      border: 1px solid #ccc;
+      display: block;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      transform: scale(1);
+      transform-origin: top left;
+    }
+
     @media (max-width: 900px) {
       .daycount-wrap {
         flex-direction: column;
