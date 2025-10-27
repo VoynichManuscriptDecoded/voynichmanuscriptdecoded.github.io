@@ -115,120 +115,93 @@
     }
 
     /* --- MOBILE RESPONSIVE --- */
-    @media (max-width: 900px) {
-      main {
-        padding: 0 40px;
-      }
+@media (max-width: 600px) {
+  main {
+    padding: 15px 25px 60px 25px; /* added bottom space */
+  }
 
-      h1 {
-        font-size: 40px;
-        margin-top: 25px;
-      }
+  h1 {
+    font-size: 30px;        /* slightly larger so not cut */
+    margin-top: 25px;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
 
-      h2 {
-        font-size: 22px;
-        margin-bottom: 15px;
-      }
+  h2 {
+    font-size: 20px;        /* clearer second line */
+    margin-top: 0;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
 
-      p {
-        font-size: 15px;
-        line-height: 1.5;
-      }
+  p {
+    font-size: 15px;
+    margin: 8px 0;
+  }
 
-      .filters select {
-        font-size: 15px;
-      }
+  /* hide 3 of 4 intro paragraphs, keep the first only */
+  p:nth-of-type(2),
+  p:nth-of-type(3),
+  p:nth-of-type(4) {
+    display: none;
+  }
 
-      .folio-headings {
-        font-size: 14px;
-      }
+  .filters {
+    margin-top: 12px;
+    margin-bottom: 10px;
+  }
 
-      .folio-row {
-        font-size: 15px;
-      }
-    }
+  .filters select {
+    font-size: 15px;
+    padding: 6px 8px;
+    margin: 6px;
+    width: 46%;
+  }
 
-    @media (max-width: 600px) {
-      main {
-        padding: 0 25px;
-      }
+  .folio-headings {
+    display: none;
+  }
 
-      h1 {
-        font-size: 26px;
-        margin-top: 20px;
-        margin-bottom: 4px;
-        letter-spacing: 1px;
-      }
+  .folio-row {
+    display: block;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 10px auto;
+    max-width: 90%;
+    text-align: left;
+  }
 
-      h2 {
-        font-size: 18px;
-        margin-top: 0;
-        margin-bottom: 10px;
-        line-height: 1.2;
-      }
+  .folio-row div {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
 
-      p {
-        font-size: 14px;
-        margin: 6px 0;
-      }
+  .folio-row div:nth-child(1)::before {
+    content: "Type: ";
+    font-weight: bold;
+  }
 
-      /* hide 3 of the 4 intro paragraphs, keep the first only */
-      p:nth-of-type(2),
-      p:nth-of-type(3),
-      p:nth-of-type(4) {
-        display: none;
-      }
+  .folio-row div:nth-child(2)::before {
+    content: "Vessel: ";
+    font-weight: bold;
+  }
 
-      .filters {
-        margin-top: 10px;
-      }
+  .folio-row div:nth-child(3)::before {
+    content: "Title: ";
+    font-weight: bold;
+  }
 
-      .filters select {
-        font-size: 14px;
-        padding: 5px 8px;
-        margin: 4px;
-        width: 45%;
-      }
+  .folio-row div:nth-child(4)::before {
+    content: "Folio: ";
+    font-weight: bold;
+  }
 
-      .folio-headings {
-        display: none;
-      }
-
-      .folio-row {
-        display: block;
-        border: 1px solid #eee;
-        border-radius: 8px;
-        padding: 14px;
-        margin: 10px auto;
-        max-width: 90%;
-        text-align: left;
-      }
-
-      .folio-row div {
-        font-size: 15px;
-        margin-bottom: 6px;
-      }
-
-      .folio-row div:nth-child(1)::before {
-        content: "Type: ";
-        font-weight: bold;
-      }
-
-      .folio-row div:nth-child(2)::before {
-        content: "Vessel: ";
-        font-weight: bold;
-      }
-
-      .folio-row div:nth-child(3)::before {
-        content: "Title: ";
-        font-weight: bold;
-      }
-
-      .folio-row div:nth-child(4)::before {
-        content: "Folio: ";
-        font-weight: bold;
-      }
-    }
+  .folio-rows {
+    margin-bottom: 80px;  /* ensures bottom not empty */
+  }
+}
   </style>
 </head>
 <body>
