@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voynich Manuscript Folios – The Voynich Manuscript Decoded</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <!-- Google tag (gtag.js) -->
@@ -34,10 +33,10 @@
     }
 
     h1 {
-      font-size: 64px;
+      font-size: 56px;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-bottom: 30px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
       margin-top: 0;
     }
 
@@ -49,9 +48,9 @@
       border-bottom: 1px solid #999;
       padding-bottom: 8px;
       text-transform: uppercase;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: bold;
-      color: #444;
+      color: #333;
       letter-spacing: 1px;
     }
 
@@ -71,6 +70,7 @@
 
     .section-row div {
       font-size: 18px;
+      word-wrap: break-word;
     }
 
     .section-row a {
@@ -84,9 +84,9 @@
     }
 
     p.note {
-      font-size: 18px;
+      font-size: 17px;
       color: #555;
-      margin-top: 60px;
+      margin-top: 50px;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
@@ -99,60 +99,57 @@
       color: #555;
     }
 
-    /* -------- Responsive Adjustments -------- */
+    /* ---------- Responsive ---------- */
 
-    /* Tablet screens */
     @media (max-width: 900px) {
       main {
-        padding: 40px 30px;
+        padding: 30px 25px;
       }
 
       h1 {
-        font-size: 46px;
+        font-size: 40px;
+        letter-spacing: 1px;
       }
 
       .section-headings {
-        grid-template-columns: 1fr 1fr;
-        font-size: 15px;
+        font-size: 14px;
+        grid-template-columns: 1fr 1.5fr 0.8fr;
+        max-width: 90%;
       }
 
       .section-row {
-        grid-template-columns: 1fr 1fr;
-        row-gap: 6px;
+        grid-template-columns: 1fr 1.5fr 0.8fr;
+        max-width: 90%;
       }
 
-      .section-row div {
-        font-size: 16px;
-      }
-
-      .section-row a {
+      .section-row div, .section-row a {
         font-size: 16px;
       }
     }
 
-    /* Small phones */
     @media (max-width: 600px) {
       h1 {
-        font-size: 34px;
-        letter-spacing: 2px;
+        font-size: 32px;
+        line-height: 1.2;
       }
 
       .section-headings {
-        display: none; /* Hide the header row */
+        display: none;
       }
 
       .section-row {
         display: block;
+        text-align: left;
         border: 1px solid #eee;
-        border-radius: 10px;
-        padding: 12px;
-        margin-bottom: 12px;
+        border-radius: 8px;
+        padding: 14px;
+        margin: 10px auto;
+        max-width: 90%;
       }
 
       .section-row div {
-        display: block;
         font-size: 16px;
-        line-height: 1.4;
+        margin-bottom: 6px;
       }
 
       .section-row div:nth-child(1)::before {
@@ -171,12 +168,8 @@
       }
 
       p.note {
-        font-size: 16px;
-        margin-top: 40px;
-      }
-
-      footer {
-        margin-top: 50px;
+        font-size: 15px;
+        margin-top: 35px;
       }
     }
   </style>
@@ -184,6 +177,7 @@
 <body>
 
   <main>
+
     <h1>Voynich Manuscript Folios</h1>
 
     <div class="section-headings">
@@ -193,7 +187,6 @@
     </div>
 
     <div class="section-list">
-
       <div class="section-row">
         <div>I</div>
         <div><a href="section1/index.html">Recipe, Medicines, Fertility Ailments & Treatments</a></div>
@@ -211,7 +204,6 @@
         <div>Coming Soon</div>
         <div>–</div>
       </div>
-
     </div>
 
     <p class="note">
