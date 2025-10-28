@@ -26,37 +26,28 @@
       text-align: center;
     }
 
-    /* --- HEADER LINE FIX --- */
+    /* --- HEADER LINE FIX (PERFECTLY LEVEL) --- */
     .folio-header {
-      position: relative;
-      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto 10px auto;
       text-align: center;
-      margin-top: 25px;
-      margin-bottom: 8px;
     }
 
-    .folio-header .left {
-      position: absolute;
-      left: 60px;
-      top: 0;
-      font-size: 16px; /* reduced to one-third smaller */
-      font-style: italic;
-    }
-
+    .folio-header .left,
     .folio-header .right {
-      position: absolute;
-      right: 60px;
-      top: 0;
-      font-size: 16px; /* reduced to one-third smaller */
+      font-size: 24px;   /* slightly smaller than Folio */
       font-style: italic;
+      flex: 1;
     }
 
     .folio-header .center {
-      display: inline-block;
-      font-size: 34px;
+      font-size: 34px;   /* Folio slightly larger */
       font-weight: normal;
-      letter-spacing: 1px;
-      vertical-align: middle;
+      flex: 2;
     }
 
     .subtitle {
@@ -69,27 +60,19 @@
     }
 
     @media (max-width: 800px) {
+      .folio-header {
+        flex-direction: column;
+        gap: 6px;
+      }
       .folio-header .left,
       .folio-header .right {
-        position: static;
-        display: block;
-        text-align: center;
-        margin: 4px 0;
-        font-size: 15px;
+        font-size: 18px;
       }
-
       .folio-header .center {
-        display: block;
         font-size: 26px;
-        margin: 6px 0;
-      }
-
-      .subtitle {
-        margin-top: 0;
       }
     }
 
-    /* --- MAIN TITLE --- */
     h1 {
       font-size: 46px;
       margin-top: 0;
@@ -97,7 +80,6 @@
       letter-spacing: 1px;
     }
 
-    /* --- MEDIA ROW (video + image) --- */
     .media-row {
       display: flex;
       justify-content: center;
@@ -164,7 +146,6 @@
       margin-top: 20px;
     }
 
-    /* --- Simple Key + Day Counts --- */
     .daycount-wrap {
       display: flex;
       justify-content: center;
@@ -213,7 +194,6 @@
       margin: 0 auto;
     }
 
-    /* --- Bottom Images --- */
     .bottom-images {
       display: flex;
       justify-content: center;
@@ -247,41 +227,11 @@
       transform: scale(1);
       transform-origin: top left;
     }
-
-    @media (max-width: 900px) {
-      .daycount-wrap {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-      }
-
-      .simple-key,
-      .sheet-block {
-        flex: 1 1 100%;
-        max-width: 600px;
-      }
-
-      .simple-key iframe {
-        height: 400px;
-      }
-
-      .bottom-images img {
-        width: 90%;
-        max-width: none;
-      }
-    }
-
-    @media (max-width: 700px) {
-      h1 { font-size: 32px; }
-      .scroll-box { height: 400px; }
-      summary { font-size: 18px; }
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- Proper header -->
   <div class="folio-header">
     <span class="left">Vessel – Fire / Air / Water / Earth Containers</span>
     <span class="center">Folio 1r – RECIPE PAGE</span>
