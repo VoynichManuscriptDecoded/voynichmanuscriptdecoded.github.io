@@ -26,14 +26,6 @@
       text-align: center;
     }
 
-    h2 {
-      font-size: 32px;
-      margin-top: 15px;
-      margin-bottom: 8px;
-      font-weight: normal;
-      letter-spacing: 0.5px;
-    }
-
     h1 {
       font-size: 46px;
       margin-top: 0;
@@ -41,21 +33,40 @@
       letter-spacing: 1px;
     }
 
+    /* --- CLASSIFIERS --- */
     .classifiers {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto 10px auto;
-      font-size: 26px;
+      align-items: baseline;
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto 8px auto;
+      font-size: 22px;
       color: black;
+      white-space: nowrap;
+    }
+
+    .classifiers div {
+      flex: 1;
+      text-align: center;
+    }
+
+    .classifiers div:first-child {
+      text-align: left;
+      margin-left: 40px;
+    }
+
+    .classifiers div:last-child {
+      text-align: right;
+      margin-right: 40px;
     }
 
     .subtitle {
       font-style: italic;
       font-size: 20px;
       color: #333;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
+      text-align: center;
     }
 
     .media-row {
@@ -199,8 +210,10 @@
     @media (max-width: 900px) {
       .classifiers {
         flex-direction: column;
-        gap: 8px;
-        font-size: 22px;
+        gap: 6px;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 15px;
       }
       .subtitle { font-size: 18px; margin-bottom: 25px; }
       .daycount-wrap { flex-direction: column; align-items: center; gap: 30px; }
@@ -211,8 +224,7 @@
 
     @media (max-width: 700px) {
       h1 { font-size: 32px; }
-      h2 { font-size: 24px; margin-top: 10px; }
-      .classifiers { font-size: 20px; }
+      .classifiers { font-size: 18px; }
       .subtitle { font-size: 16px; }
     }
   </style>
