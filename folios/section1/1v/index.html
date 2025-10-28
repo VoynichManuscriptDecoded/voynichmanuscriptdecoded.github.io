@@ -247,43 +247,66 @@
 </head>
 
 <body>
-<h2 style="font-size: 36px; font-weight: normal; margin-bottom: 4px; letter-spacing: 0.5px;">
-  Folio 1v – REAL PLANT
-</h2>
-
-<p style="font-size: 20px; color: #444; font-style: italic; margin-top: 0; margin-bottom: 28px;">
-  No Red or Blue Pigment on Folio
-</p>
-
 <style>
-  .classifiers {
+  .folio-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 0 auto 30px auto;
-    padding: 0 80px;
-    font-size: 26px;
-    font-weight: 500;
+    margin: 30px auto 10px auto;
+    padding: 0 40px;
     color: black;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .folio-header .side {
+    font-size: 26px;
     font-style: italic;
+    font-weight: 500;
+  }
+
+  .folio-header .center {
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    flex: 1;
   }
 
   @media (max-width: 800px) {
-    .classifiers {
+    .folio-header {
       flex-direction: column;
-      text-align: center;
-      gap: 8px;
-      padding: 0 20px;
-      font-size: 24px;
+      gap: 6px;
+      padding: 0 15px;
     }
+
+    .folio-header .side {
+      font-size: 19px;     /* smaller on mobile */
+      order: 2;
+    }
+
+    .folio-header .center {
+      font-size: 26px;     /* smaller on mobile */
+      order: 1;
+    }
+  }
+
+  .subtitle {
+    font-size: 18px;
+    color: #444;
+    font-style: italic;
+    margin-top: 2px;
+    margin-bottom: 28px;
   }
 </style>
 
-<div class="classifiers">
-  <span>Vessel – Flora</span>
-  <span>Vital Fluid – Extract Sap</span>
+<div class="folio-header">
+  <span class="side">Vessel – Flora</span>
+  <span class="center">Folio 1v – REAL PLANT</span>
+  <span class="side">Vital Fluid – Extract Sap</span>
 </div>
+
+<p class="subtitle">No Red or Blue Pigment on Folio</p>
 
 <h1>Lemon Tree (Citrus limon L.)</h1>
 
