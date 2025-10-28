@@ -1,1 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caper (Capparis spinosa)</title>
 
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5B6JL1354"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S5B6JL1354');
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      color: black;
+      background-color: white;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* --- HEADER LINE FIX --- */
+    .folio-header {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      margin-top: 25px;
+      margin-bottom: 8px;
+    }
+
+    .folio-header .left {
+      position: absolute;
+      left: 60px;
+      top: 0;
+      font-size: 26px;
+      font-style: italic;
+    }
+
+    .folio-header .right {
+      position: absolute;
+      right: 60px;
+      top: 0;
+      font-size: 26px;
+      font-style: italic;
+    }
+
+    .folio-header .center {
+      display: inline-block;
+      font-size: 36px;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 18px;
+      font-style: italic;
+      color: #444;
+      margin-top: 8px;
+      margin-bottom: 25px;
+    }
+
+    @media (max-width: 800px) {
+      .folio-header .left,
+      .folio-header .right {
+        position: static;
+        display: block;
+        text-align: center;
+        margin: 4px 0;
+        font-size: 20px;
+      }
+
+      .folio-header .center {
+        display: block;
+        font-size: 26px;
+        margin: 6px 0;
+      }
+
+      .subtitle {
+        margin-top: 0;
+      }
+    }
+
+    /* --- MAIN TITLE --- */
+    h1 {
+      font-size: 46px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    /* --- MEDIA ROW (video + image) --- */
+    .media-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+
+    .media-row iframe {
+      width: 48%;
+      max-width: 650px;
+      border: none;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .media-row img {
+      width: 48%;
+      max-width: 650px;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      border: none;
+    }
+
+    .media-caption {
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .instruction {
+      font-size: 17px;
+      font-style: italic;
+      color: black;
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+
+    details {
+      margin: 40px auto;
+      max-width: 900px;
+      text-align: left;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    details iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 20px;
+    }
+
+    /* --- Simple Key + Day Counts --- */
+    .daycount-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 60px auto 80px auto;
+      max-width: 1400px;
+    }
+
+    .simple-key {
+      flex: 0 0 320px;
+      text-align: center;
+      margin-left: 30px;
+    }
+
+    .simple-key h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .simple-key iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: block;
+    }
+
+    .sheet-block {
+      flex: 1 1 900px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .scroll-box {
+      width: 100%;
+      max-width: 900px;
+      height: 600px;
+      overflow: auto;
+      border: 1px solid #ccc;
+      margin: 0 auto;
+    }
+
+    /* --- Bottom Images --- */
+    .bottom-images {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 80px auto 40px auto;
+      max-width: 1200px;
+    }
+
+    .bottom-images img {
+      width: 48%;
+      max-width: 550px;
+      height: auto;
+      border: 1px solid #ddd;
+    }
+
+    footer {
+      margin: 40px 0 30px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    iframe[src*="docs.google.com/spreadsheets"] {
+      width: 100% !important;
+      height: 600px !important;
+      border: 1px solid #ccc;
+      display: block;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      transform: scale(1);
+      transform-origin: top left;
+    }
+
+    @media (max-width: 900px) {
+      .daycount-wrap {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .simple-key,
+      .sheet-block {
+        flex: 1 1 100%;
+        max-width: 600px;
+      }
+
+      .simple-key iframe {
+        height: 400px;
+      }
+
+      .bottom-images img {
+        width: 90%;
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 32px; }
+      .scroll-box { height: 400px; }
+      summary { font-size: 18px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Proper header -->
+  <div class="folio-header">
+    <span class="left">Vessel – Flora</span>
+    <span class="center">Folio 2v – REAL PLANT</span>
+    <span class="right">Vital Fluid – Extract Sap</span>
+  </div>
+
+  <p class="subtitle">No Red or Blue Pigment on Folio</p>
+
+  <h1>Caper (Capparis spinosa)</h1>
+  
+  <div class="media-row">
+    <iframe src="https://www.youtube.com/embed/7UgwHTYYQn0" title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+
+    <img src="2v top.jpeg" alt="Labelled diagram of Folio 2v Caper">
+  </div>
+
+  <div class="media-caption">MS 408 – Beinecke Library, Yale University</div>
+
+  <div class="instruction">
+    Scroll down to the bottom and work upward to see the full evolution of the code.
+  </div>
+
+  <details>
+    <summary>Summary</summary>
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vQlZpYIKHx6EQz0v_aA6Mq6-J9CbuiCpSB61N9hE5313Z01VXsNbZ_zIC0nC03m4bfJQTJCvTjOjDry/pub?embedded=true"></iframe>
+  </details>
+
+  <details>
+    <summary>Full Line Translations</summary>
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vQygJ_DF7EaI4hNXt9OoG9MzuDltvxHDpklM1ZQH-d92gMDf09PXWLMI8nJn-rsFp0coUpJbcW9PWbq/pub?embedded=true"></iframe>
+  </details>
+
+  <div class="daycount-wrap">
+    <div class="simple-key">
+      <h4>Simple Key</h4>
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPqvGKr5N0flRCPpKzyRwJCw1DRAYnULOiH3hhQFBrZQU1awAqjXxM1vv6HeUxLC0eu08JzuRfWFiI/pubhtml?gid=976246716&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    </div>
+
+    <div class="sheet-block">
+      <h3>Glyphs to Day Counts (Scrollable)</h3>
+      <div class="scroll-box">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSUPLx3pDegzd8yigo9jBb3Qdq0o7hlOoyRDDA8NCHLCfrF0w3FozvljQwKlUFyadIkd8xwNG149J1o/pubhtml?gid=2032855852&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-images">
+    <img src="2v bottom.jpeg" alt="Original manuscript of Folio 2v Caper">
+    <img src="2v glyphs.jpeg" alt="Folio 2v glyph overlay on parchment">
+  </div>
+
+  <div class="media-caption">MS 408 – Beinecke Library, Yale University</div>
+
+  <footer>© Christine Blackburn – The Voynich Manuscript Decoded</footer>
+</body>
+</html>
