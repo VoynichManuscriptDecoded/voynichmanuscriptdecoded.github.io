@@ -247,7 +247,7 @@
 </head>
 
 <body>
- <h2 style="font-size: 36px; font-weight: normal; margin-bottom: 4px; letter-spacing: 0.5px;">
+<h2 style="font-size: 36px; font-weight: normal; margin-bottom: 4px; letter-spacing: 0.5px;">
   Folio 1v – REAL PLANT
 </h2>
 
@@ -255,18 +255,32 @@
   No Red or Blue Pigment on Folio
 </p>
 
-<div style="
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto 30px auto;
-  padding: 0 80px;
-  font-size: 26px;
-  font-weight: 500;
-  color: black;
-  font-style: italic;
-">
+<style>
+  .classifiers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    padding: 0 80px;
+    font-size: 26px;
+    font-weight: 500;
+    color: black;
+    font-style: italic;
+  }
+
+  @media (max-width: 800px) {
+    .classifiers {
+      flex-direction: column;
+      text-align: center;
+      gap: 8px;
+      padding: 0 20px;
+      font-size: 24px;
+    }
+  }
+</style>
+
+<div class="classifiers">
   <span>Vessel – Flora</span>
   <span>Vital Fluid – Extract Sap</span>
 </div>
