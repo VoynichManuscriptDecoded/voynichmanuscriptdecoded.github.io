@@ -241,7 +241,6 @@
       margin: 0 auto;
     }
 
-    /* --- Bottom Images --- */
     .bottom-images {
       display: flex;
       justify-content: center;
@@ -269,34 +268,10 @@
       width: 100% !important;
       height: 600px !important;
       border: 1px solid #ccc;
-      display: block;
       overflow-x: hidden !important;
       overflow-y: auto !important;
       transform: scale(1);
       transform-origin: top left;
-    }
-
-    @media (max-width: 900px) {
-      .daycount-wrap {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-      }
-      .simple-key,
-      .sheet-block {
-        flex: 1 1 100%;
-        max-width: 600px;
-      }
-      .simple-key iframe { height: 400px; }
-      .media-row iframe,
-      .image-pair { width: 90%; max-width: none; }
-      .bottom-images img { width: 90%; max-width: none; }
-    }
-
-    @media (max-width: 700px) {
-      h1 { font-size: 32px; }
-      .scroll-box { height: 400px; }
-      summary { font-size: 18px; }
     }
   </style>
 </head>
@@ -330,31 +305,50 @@
     Scroll down to the bottom and work upward to see the full evolution of the code.
   </div>
 
+  <!-- NEW DETAILS SECTIONS IN ORDER -->
+
   <details>
-    <summary>Summary</summary>
+    <summary>Folio & Planetary Summary</summary>
     <iframe src="https://docs.google.com/document/d/e/2PACX-1vT5zd4u9wkL85IUjGSaBubp9pYo19QY_FFUrCozs5dT-tw-vg23IFx1nV_mr62btmJiKy870eRdmwDx/pub?embedded=true"></iframe>
   </details>
 
   <details>
-    <summary>Procedural Analysis & Treatment Schedule</summary>
+    <summary>Medical Treatment Schedule</summary>
     <iframe src="https://docs.google.com/document/d/e/2PACX-1vTD1IHu9eCy0hKsX6c1kbK3fF4v7WUKgvw-Bj1bIJdi-Yto_hjYbpDi54C_8J7ilY7l7VSUPGr2O5Wu/pub?embedded=true"></iframe>
   </details>
 
   <details>
-    <summary>Full Line Translations</summary>
-    <iframe src="https://docs.google.com/document/d/e/2PACX-1vQPeJ56Uhr8jBuypVIFRcsIYHKiFOl3UfjQjEqYtCLc-zcYb-Kv-hWEpY6vf2DpdK2ac9VBWVr3az-5/pub?embedded=true"></iframe>
+    <summary>Planetary Mapping</summary>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFrdspmGcGEkhjqMmFFSSKSMX-4ud3Ea6zlGZ4NRF1qU-ieJvCIyYw--Q5HupEWV8lg2WHKbY4IiBz/pubhtml?gid=202392173&single=true&widget=true&headers=false"></iframe>
   </details>
+
+  <details>
+    <summary>Planetary Positions</summary>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFrdspmGcGEkhjqMmFFSSKSMX-4ud3Ea6zlGZ4NRF1qU-ieJvCIyYw--Q5HupEWV8lg2WHKbY4IiBz/pubhtml?gid=1697255874&single=true&widget=true&headers=false"></iframe>
+  </details>
+
+  <details>
+    <summary>Block Translations</summary>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFrdspmGcGEkhjqMmFFSSKSMX-4ud3Ea6zlGZ4NRF1qU-ieJvCIyYw--Q5HupEWV8lg2WHKbY4IiBz/pubhtml?gid=372892843&single=true&widget=true&headers=false"></iframe>
+  </details>
+
+  <details>
+    <summary>Line Day Counts (Scrollable)</summary>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFrdspmGcGEkhjqMmFFSSKSMX-4ud3Ea6zlGZ4NRF1qU-ieJvCIyYw--Q5HupEWV8lg2WHKbY4IiBz/pubhtml?gid=1917248431&single=true&widget=true&headers=false"></iframe>
+  </details>
+
+  <!-- SIMPLE KEY + RAW GLYPHS -->
 
   <div class="daycount-wrap">
     <div class="simple-key">
       <h4>Simple Key</h4>
-      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPqvGKr5N0flRCPpKzyRwJCw1DRAYnULOiH3hhQFBrZQU1awAqjXxM1vv6HeUxLC0eu08JzuRfWFiI/pubhtml?gid=976246716&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPqvGKr5N0flRCPpKzyRwJCw1DRAYnULOiH3hhQFBrZQU1awAqjXxM1vv6HeUxLC0eu08JzuRfWFiI/pubhtml?gid=976246716&single=true&widget=true&headers=false"></iframe>
     </div>
 
     <div class="sheet-block">
-      <h3>Glyphs to Day Counts (Scrollable)</h3>
+      <h3>Raw Glyphs & Day Counts (Scrollable)</h3>
       <div class="scroll-box">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFrdspmGcGEkhjqMmFFSSKSMX-4ud3Ea6zlGZ4NRF1qU-ieJvCIyYw--Q5HupEWV8lg2WHKbY4IiBz/pubhtml?gid=1917248431&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFrdspmGcGEkhjqMmFFSSKSMX-4ud3Ea6zlGZ4NRF1qU-ieJvCIyYw--Q5HupEWV8lg2WHKbY4IiBz/pubhtml?gid=1838200963&single=true&widget=true&headers=false"></iframe>
       </div>
     </div>
   </div>
