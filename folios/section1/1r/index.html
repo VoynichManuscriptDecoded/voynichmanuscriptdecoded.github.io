@@ -138,12 +138,23 @@
       text-align: center;
     }
 
-    details iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      margin-top: 20px;
-    }
+/* Default iframe inside <details> */
+details iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 600px;
+  border: none;
+  margin-top: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Landscape Google Docs fix */
+details iframe[src*="docs.google.com/document"] {
+  height: 900px !important;  /* taller for landscape pages */
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+}
 
     .daycount-wrap {
       display: flex;
@@ -221,15 +232,6 @@
       overflow-x: hidden !important;
       overflow-y: auto !important;
     }
-    /* Fix for landscape Google Docs embeds */
-details iframe[src*="docs.google.com/document"] {
-  width: 100% !important;
-  max-width: 100% !important;
-  height: 800px !important;    /* adjust height if needed */
-  border: none;
-  overflow-x: hidden !important; /* NO horizontal scroll */
-  overflow-y: auto !important;   /* YES vertical scroll */
-}
 
   </style>
 </head>
