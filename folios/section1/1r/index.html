@@ -236,6 +236,31 @@
       font-size: 16px;
       color: #555;
     }
+  /* --- FIX FOR GOOGLE DOCS + SHEETS CENTRING --- */
+
+details {
+  text-align: center !important;   /* stop forcing left alignment */
+}
+
+/* Center any iframe inside <details> */
+details iframe {
+  display: block !important;
+  margin: 0 auto !important;       /* centre the iframe itself */
+  max-width: 90vw !important;      /* stop overflowing */
+}
+
+/* Landscape Google Docs fix */
+details iframe[src*="docs.google.com/document"] {
+  height: 900px !important;
+}
+
+/* Spreadsheet display fix + centring */
+iframe[src*="docs.google.com/spreadsheets"] {
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 95vw !important;
+}
+
 </style>
 
 </head>
