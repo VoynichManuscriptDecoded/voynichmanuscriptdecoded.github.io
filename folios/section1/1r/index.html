@@ -16,7 +16,7 @@
     gtag('config', 'G-S5B6JL1354');
   </script>
 
-  <style>
+<style>
     body {
       margin: 0;
       font-family: Georgia, serif;
@@ -121,6 +121,7 @@
       margin-bottom: 25px;
     }
 
+    /* --- DETAILS BLOCK --- */
     details {
       margin: 40px auto;
       max-width: 1200px;
@@ -138,24 +139,35 @@
       text-align: center;
     }
 
-/* Default iframe inside <details> */
-details iframe {
-  width: 100%;
-  max-width: 100%;
-  height: 600px;
-  border: none;
-  margin-top: 20px;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
+    /* --- UNIVERSAL IFRAME FIX INSIDE DETAILS --- */
+    details iframe {
+      display: block;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 20px auto 0 auto !important;
+      border: none;
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 600px;
+    }
 
-/* Landscape Google Docs fix */
-details iframe[src*="docs.google.com/document"] {
-  height: 900px !important;  /* taller for landscape pages */
-  overflow-x: hidden !important;
-  overflow-y: scroll !important;
-}
+    /* --- LANDSCAPE GOOGLE DOC FIX --- */
+    details iframe[src*="docs.google.com/document"] {
+      height: 900px !important;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+    }
 
+    /* --- SHEETS FIX --- */
+    iframe[src*="docs.google.com/spreadsheets"] {
+      width: 100% !important;
+      height: 600px !important;
+      border: 1px solid #ccc;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+    }
+
+    /* --- DAYCOUNT WRAPPER --- */
     .daycount-wrap {
       display: flex;
       justify-content: center;
@@ -224,16 +236,8 @@ details iframe[src*="docs.google.com/document"] {
       font-size: 16px;
       color: #555;
     }
+</style>
 
-    iframe[src*="docs.google.com/spreadsheets"] {
-      width: 100% !important;
-      height: 600px !important;
-      border: 1px solid #ccc;
-      overflow-x: hidden !important;
-      overflow-y: auto !important;
-    }
-
-  </style>
 </head>
 
 <body>
