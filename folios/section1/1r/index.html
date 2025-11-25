@@ -222,6 +222,35 @@
       overflow-y: auto !important;
     }
 
+    /* Make all Google Docs iframes look perfect and centred */
+details iframe[src*="docs.google.com/document"] {
+  width: 100% !important;
+  height: 760px !important;           /* gives portrait docs room */
+  border: 1px solid #ccc !important;
+  display: block !important;
+  margin: 20px auto !important;
+  background: #fff;
+}
+
+/* THIS IS THE ACTUAL MAGIC PART – forces Google’s own title bar and text to centre */
+details iframe[src*="docs.google.com/document"] body,
+details iframe[src*="docs.google.com/document"] .docs-titlebar-label,
+details iframe[src*="docs.google.com/document"] .docs-titlebar-label * ,
+details iframe[src*="docs.google.com/document"] .kix-appview-editor,
+details iframe[src*="docs.google.com/document"] .docs-material,
+details iframe[src*="docs.google.com/document"] .titlebar,
+details iframe[src*="docs.google.com/document"] .docs-gm {
+  text-align: center !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+    
   </style>
 </head>
 
