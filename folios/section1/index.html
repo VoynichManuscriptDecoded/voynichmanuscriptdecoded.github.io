@@ -232,6 +232,14 @@
         margin-bottom: 80px; /* prevents blank bottom space */
       }
     }
+    /* Disable all folio links except 1r */
+.folio-row a[href]:not([href^="1r/"]) {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: black;
+}
+
   </style>
 </head>
 <body>
