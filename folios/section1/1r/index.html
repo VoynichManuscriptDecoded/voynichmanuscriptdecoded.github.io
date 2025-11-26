@@ -144,6 +144,14 @@ details iframe {
   border: none;
   margin-top: 20px;
 
+  /* Fix Google Docs left-leaning embeds */
+details iframe[src*="docs.google.com/document"] {
+  transform: scale(0.92);
+  transform-origin: top center;
+  height: 650px !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
 }
 
     .daycount-wrap {
