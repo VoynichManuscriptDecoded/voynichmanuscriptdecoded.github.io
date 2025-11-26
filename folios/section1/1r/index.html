@@ -214,21 +214,27 @@ details iframe {
       font-size: 16px;
       color: #555;
     }
-    
 /* Center ALL Google Docs embeds */
 iframe[src*="docs.google.com/document"] {
   display: block;
-  margin: 0 auto !important;
-  width: 95% !important;            
-  max-width: 1200px;      
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90% !important;
+  max-width: 900px;
   border: none;
 }
-    iframe[src*="docs.google.com/spreadsheets"] {
-      width: 100% !important;
-      height: 600px !important;
-      border: 1px solid #ccc;
-      overflow-x: hidden !important;
-      overflow-y: auto !important;
+
+/* Google Sheets override */
+iframe[src*="docs.google.com/spreadsheets"] {
+  width: 100% !important;
+  height: 600px !important;
+  border: 1px solid #ccc;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  transform: scale(1);
+  transform-origin: top left;
     }
 
    </style>
