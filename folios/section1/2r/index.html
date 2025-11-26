@@ -264,15 +264,30 @@
       color: #555;
     }
 
-    iframe[src*="docs.google.com/spreadsheets"] {
-      width: 100% !important;
-      height: 600px !important;
-      border: 1px solid #ccc;
-      overflow-x: hidden !important;
-      overflow-y: auto !important;
-      transform: scale(1);
-      transform-origin: top left;
-    }
+/* Center ALL Google Docs embeds */
+iframe[src*="docs.google.com/document"] {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90% !important;
+  max-width: 900px;
+  border: none;
+}
+
+/* Google Sheets override */
+iframe[src*="docs.google.com/spreadsheets"] {
+  width: 100% !important;
+  height: 600px !important;
+  border: 1px solid #ccc;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  transform: scale(1);
+  transform-origin: top left;
+}
+
+
   </style>
 </head>
 
