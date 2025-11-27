@@ -232,8 +232,8 @@
         margin-bottom: 80px; /* prevents blank bottom space */
       }
     }
-    /* Disable all folio links except 1r */
-.folio-row a[href]:not([href^="1r/"]) {
+    /* Disable all folio links except 1r and 1v */
+.folio-row a[href]:not([href^="1r/"]):not([href^="1v/"]) {
   pointer-events: none;
   cursor: default;
   text-decoration: none;
