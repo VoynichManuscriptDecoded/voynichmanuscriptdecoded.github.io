@@ -199,16 +199,27 @@
 
 <section class="bottom" style="display:flex; align-items:center; justify-content:center; position:relative; flex-wrap:wrap;">
   <a href="medici/index.html" class="medici-link" style="position:absolute; left:60px;">De Medici</a>
+
   <a href="links/index.html" class="links-link">Links</a>
+
+  <a href="ephemeris/index.html" class="ephemeris-link" style="position:absolute; right:60px;">Florence Ephemeris</a>
 
   <style>
     @media (max-width: 600px) {
-      .medici-link {
+      .medici-link,
+      .ephemeris-link {
         position: static !important;
         display: block;
         width: 100%;
         text-align: center;
+      }
+
+      .medici-link {
         margin-bottom: 28px;
+      }
+
+      .ephemeris-link {
+        margin-top: 28px;
       }
     }
   </style>
