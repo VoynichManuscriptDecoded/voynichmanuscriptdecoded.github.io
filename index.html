@@ -197,18 +197,25 @@
     <h2>Decoded</h2>
   </section>
 
-<section class="bottom" style="display:flex; align-items:center; justify-content:center; position:relative; flex-wrap:wrap;">
-  <a href="medici/index.html" class="medici-link" style="position:absolute; left:60px;">De Medici</a>
+<section class="bottom" style="display:grid; grid-template-columns:repeat(4, 1fr); align-items:center; text-align:center;">
+  <a href="medici/index.html" class="medici-link">De Medici</a>
 
   <a href="links/index.html" class="links-link">Links</a>
   
-   <a href="research/index.html" class="research-link" style="margin-left:60px;">Research &amp; Validation</a>
+  <a href="research/index.html" class="research-link">Research &amp; Validation</a>
 
-  <a href="https://asset-manager--kris264.replit.app/" class="ephemeris-link" style="position:absolute; right:60px;" target="_blank" rel="noopener">Florence Ephemeris</a>
+  <a href="https://asset-manager--kris264.replit.app/" class="ephemeris-link" target="_blank" rel="noopener">Florence Ephemeris</a>
 
   <style>
     @media (max-width: 600px) {
+      section.bottom {
+        display: flex !important;
+        flex-direction: column;
+      }
+
       .medici-link,
+      .links-link,
+      .research-link,
       .ephemeris-link {
         position: static !important;
         display: block;
@@ -218,6 +225,10 @@
 
       .medici-link {
         margin-bottom: 28px;
+      }
+
+      .research-link {
+        margin-top: 28px;
       }
 
       .ephemeris-link {
